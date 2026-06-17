@@ -4,7 +4,7 @@
 
 # agent-examples
 
-**35 real working projects spanning the full agent infrastructure stack.**
+**40 real working projects spanning the full agent infrastructure stack.**
 
 No API keys required. All examples run locally with `python main.py`.
 
@@ -310,9 +310,20 @@ agentguard-lib   → safety           injection, PII, jailbreak, tool governance
 agentregistry-py → discovery        publish, version, search, health-check agents
 agenteval-core   → quality          golden, adversarial, policy, regression tests
 agentobserve-py  → observability    unified dashboard across all layers
+agentmesh-bus    → event bus        connects agents, humans, systems via typed events
 agent-gateway    → routing          protocol translation (A2A, MCP, OpenAI, REST)
 agentlens        → efficiency       MCP schema optimization, 80–95% token reduction
 ```
+
+### 11 AgentMesh — Event-driven agents
+
+| Project | Libraries | Description |
+|---|---|---|
+| [01_hello_mesh](projects/11_agentmesh/01_hello_mesh/) | `agentmesh-bus` | Wildcard subscriptions, tenant isolation, stats |
+| [02_multi_agent_events](projects/11_agentmesh/02_multi_agent_events/) | `agentmesh-bus` | 4-agent causality chain with full replay |
+| [03_event_driven_billing](projects/11_agentmesh/03_event_driven_billing/) | `agentmesh-bus` `agentplane-py` `agentguard-lib` | Governed billing agent reacting to order events |
+| [04_hitl_approval](projects/11_agentmesh/04_hitl_approval/) | `agentmesh-bus` | HITL request/reply — approve, reject, timeout |
+| [05_full_stack_events](projects/11_agentmesh/05_full_stack_events/) | all 6 libraries | Full stack wired via mesh events + post-run eval |
 
 ## Run a project
 
