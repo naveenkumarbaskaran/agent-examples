@@ -1,0 +1,3 @@
+agentplane-py
+agentregistry-py
+agenthooks-py

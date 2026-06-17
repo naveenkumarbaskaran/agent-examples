@@ -1,0 +1,1 @@
+{"permissions":{"allow":["Write(**)", "Bash(mkdir:*)", "Bash(git *)", "Bash(gh *)", "Bash(python *)", "Bash(pip *)"]}}
