@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="assets/banner.svg" alt="agent-examples" width="100%"/>
+
 # agent-examples
 
 **35 real working projects spanning the full agent infrastructure stack.**
@@ -13,20 +15,46 @@ No API keys required. All examples run locally with `python main.py`.
 
 ---
 
-## The Stack
+## The Full Stack
+
+Every library used in these examples — with PyPI install, GitHub repo, and purpose.
+
+### Core Agent Infrastructure
 
 | Package | PyPI | GitHub | Purpose |
 |---|---|---|---|
-| `agenthooks-py` | [![PyPI](https://img.shields.io/pypi/v/agenthooks-py.svg)](https://pypi.org/project/agenthooks-py/) | [agenthooks](https://github.com/naveenkumarbaskaran/agenthooks) | Hookpoints and extensibility |
-| `agentplane-py` | [![PyPI](https://img.shields.io/pypi/v/agentplane-py.svg)](https://pypi.org/project/agentplane-py/) | [agentplane](https://github.com/naveenkumarbaskaran/agentplane) | Runtime policy control plane |
-| `agentguard-lib` | [![PyPI](https://img.shields.io/pypi/v/agentguard-lib.svg)](https://pypi.org/project/agentguard-lib/) | [AgentGuard](https://github.com/naveenkumarbaskaran/AgentGuard) | Safety guardrails |
-| `agentregistry-py` | [![PyPI](https://img.shields.io/pypi/v/agentregistry-py.svg)](https://pypi.org/project/agentregistry-py/) | [agentregistry](https://github.com/naveenkumarbaskaran/agentregistry) | Agent discovery and versioning |
-| `agenteval-core` | [![PyPI](https://img.shields.io/pypi/v/agenteval-core.svg)](https://pypi.org/project/agenteval-core/) | [agenteval](https://github.com/naveenkumarbaskaran/agenteval) | Agent testing framework |
-| `agentobserve-py` | [![PyPI](https://img.shields.io/pypi/v/agentobserve-py.svg)](https://pypi.org/project/agentobserve-py/) | [agentobserve](https://github.com/naveenkumarbaskaran/agentobserve) | Observability dashboard |
+| `wire-ai` | [![PyPI](https://img.shields.io/pypi/v/wire-ai.svg)](https://pypi.org/project/wire-ai/) | [wire-ai](https://github.com/naveenkumarbaskaran/wire-ai) | Framework-agnostic governance — loops, HITL, SLA, audit, RBAC |
+| `agenthooks-py` | [![PyPI](https://img.shields.io/pypi/v/agenthooks-py.svg)](https://pypi.org/project/agenthooks-py/) | [agenthooks](https://github.com/naveenkumarbaskaran/agenthooks) | Hookpoints and customer extensibility |
+| `agentplane-py` | [![PyPI](https://img.shields.io/pypi/v/agentplane-py.svg)](https://pypi.org/project/agentplane-py/) | [agentplane](https://github.com/naveenkumarbaskaran/agentplane) | Runtime policy control plane — block, degrade, escalate |
+| `agentguard-lib` | [![PyPI](https://img.shields.io/pypi/v/agentguard-lib.svg)](https://pypi.org/project/agentguard-lib/) | [AgentGuard](https://github.com/naveenkumarbaskaran/AgentGuard) | Safety guardrails — injection, PII, jailbreak, tool governance |
+| `agentregistry-py` | [![PyPI](https://img.shields.io/pypi/v/agentregistry-py.svg)](https://pypi.org/project/agentregistry-py/) | [agentregistry](https://github.com/naveenkumarbaskaran/agentregistry) | Agent discovery, versioning, and health checks |
+| `agenteval-core` | [![PyPI](https://img.shields.io/pypi/v/agenteval-core.svg)](https://pypi.org/project/agenteval-core/) | [agenteval](https://github.com/naveenkumarbaskaran/agenteval) | Agent testing — golden, adversarial, policy, regression |
+| `agentobserve-py` | [![PyPI](https://img.shields.io/pypi/v/agentobserve-py.svg)](https://pypi.org/project/agentobserve-py/) | [agentobserve](https://github.com/naveenkumarbaskaran/agentobserve) | Unified observability — metrics, audit, escalations, health |
+
+### Supporting Tools
+
+| Tool | GitHub | Purpose |
+|---|---|---|
+| agent-gateway | [agent-gateway](https://github.com/naveenkumarbaskaran/agent-gateway) | Protocol translation — A2A, MCP, OpenAI, REST |
+| agentlens | [agentlens](https://github.com/naveenkumarbaskaran/agentlens) | MCP schema optimizer — reduces token overhead 80–95% |
+
+### Architecture
+
+```
+wire-ai          → governance       loops, HITL, SLA, tamper-proof audit, RBAC
+agentplane-py    → control plane    runtime policy, versioning, escalation, plug/unplug
+agenthooks-py    → extensibility    hookpoints, customer hooks, zero-dep core
+agentguard-lib   → safety           injection, PII, jailbreak, tool governance
+agentregistry-py → discovery        publish, version, search, health-check agents
+agenteval-core   → quality          golden, adversarial, policy, regression tests
+agentobserve-py  → observability    unified view across all layers
+agent-gateway    → routing          protocol translation (A2A, MCP, OpenAI, REST)
+agentlens        → efficiency       MCP schema optimization, token reduction
+```
 
 ```bash
-# Install everything
-pip install agenthooks-py agentplane-py agentguard-lib agentregistry-py agenteval-core agentobserve-py
+# Install all PyPI packages
+pip install wire-ai agenthooks-py agentplane-py agentguard-lib agentregistry-py agenteval-core agentobserve-py
 ```
 
 ---
@@ -275,18 +303,29 @@ python main.py
 ## Architecture
 
 ```
-agentplane-py    → control plane      Runtime policy, versioning, escalation, plug/unplug
-agenthooks-py    → extensibility      Hookpoints, context enrichment, customer hooks
-agentguard-lib   → safety             Injection, PII, jailbreak, tool governance
-agentregistry-py → discovery          Publish, version, search, health-check agents
-agenteval-core   → quality            Golden, adversarial, policy, regression tests
-agentobserve-py  → observability      Unified dashboard across all layers
+wire-ai          → governance       loops, HITL, SLA, tamper-proof audit, RBAC
+agentplane-py    → control plane    runtime policy, versioning, escalation, plug/unplug
+agenthooks-py    → extensibility    hookpoints, context enrichment, customer hooks
+agentguard-lib   → safety           injection, PII, jailbreak, tool governance
+agentregistry-py → discovery        publish, version, search, health-check agents
+agenteval-core   → quality          golden, adversarial, policy, regression tests
+agentobserve-py  → observability    unified dashboard across all layers
+agent-gateway    → routing          protocol translation (A2A, MCP, OpenAI, REST)
+agentlens        → efficiency       MCP schema optimization, 80–95% token reduction
+```
+
+## Run a project
+
+```bash
+cd projects/01_basics/03_first_guard
+pip install agentguard-lib
+python main.py
 ```
 
 ---
 
 <div align="center">
 
-Apache 2.0 · All packages on [PyPI](https://pypi.org/search/?q=agent) · Built by [Naveen Kumar Baskaran](https://github.com/naveenkumarbaskaran)
+Apache 2.0 · Built by [Naveen Kumar Baskaran](https://github.com/naveenkumarbaskaran)
 
 </div>

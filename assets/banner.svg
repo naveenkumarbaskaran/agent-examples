@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#020818"/>
+      <stop offset="50%" style="stop-color:#050d2a"/>
+      <stop offset="100%" style="stop-color:#0a0520"/>
+    </linearGradient>
+    <linearGradient id="title" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#22d3ee"/>
+      <stop offset="25%" style="stop-color:#818cf8"/>
+      <stop offset="50%" style="stop-color:#f97316"/>
+      <stop offset="75%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#020818;stop-opacity:0"/>
+      <stop offset="20%" style="stop-color:#22d3ee;stop-opacity:0.6"/>
+      <stop offset="50%" style="stop-color:#818cf8;stop-opacity:1"/>
+      <stop offset="80%" style="stop-color:#f97316;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#020818;stop-opacity:0"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="tglow"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <pattern id="stars" x="0" y="0" width="120" height="80" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="15" r="0.8" fill="#fff" opacity="0.35"/>
+      <circle cx="80" cy="30" r="1" fill="#fff" opacity="0.4"/>
+      <circle cx="45" cy="60" r="0.6" fill="#22d3ee" opacity="0.4"/>
+      <circle cx="100" cy="10" r="0.7" fill="#818cf8" opacity="0.4"/>
+      <circle cx="30" cy="45" r="0.5" fill="#f97316" opacity="0.35"/>
+      <circle cx="110" cy="55" r="0.6" fill="#10b981" opacity="0.35"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="340" fill="url(#bg)"/>
+  <rect width="1200" height="340" fill="url(#stars)" opacity="0.9"/>
+
+  <!-- Pipeline lines -->
+  <line x1="0" y1="170" x2="340" y2="170" stroke="url(#line)" stroke-width="1.5" opacity="0.5"/>
+  <line x1="860" y1="170" x2="1200" y2="170" stroke="url(#line)" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Left nodes — each library a different colour -->
+  <circle cx="60"  cy="170" r="5" fill="#22d3ee" opacity="0.9" filter="url(#glow)"/>
+  <circle cx="120" cy="170" r="5" fill="#818cf8" opacity="0.9" filter="url(#soft)"/>
+  <circle cx="180" cy="170" r="5" fill="#f97316" opacity="0.9" filter="url(#soft)"/>
+  <circle cx="240" cy="170" r="5" fill="#10b981" opacity="0.9" filter="url(#soft)"/>
+  <circle cx="300" cy="170" r="4" fill="#0ea5e9" opacity="0.7"/>
+
+  <!-- Right nodes -->
+  <circle cx="900"  cy="170" r="4" fill="#0ea5e9" opacity="0.7"/>
+  <circle cx="960"  cy="170" r="5" fill="#10b981" opacity="0.9" filter="url(#soft)"/>
+  <circle cx="1020" cy="170" r="5" fill="#f97316" opacity="0.9" filter="url(#soft)"/>
+  <circle cx="1080" cy="170" r="5" fill="#818cf8" opacity="0.9" filter="url(#soft)"/>
+  <circle cx="1140" cy="170" r="5" fill="#22d3ee" opacity="0.9" filter="url(#glow)"/>
+
+  <!-- Drop lines left -->
+  <line x1="60"  y1="170" x2="60"  y2="200" stroke="#22d3ee" stroke-width="1" opacity="0.6"/>
+  <line x1="120" y1="170" x2="120" y2="196" stroke="#818cf8" stroke-width="1" opacity="0.5"/>
+  <line x1="180" y1="170" x2="180" y2="204" stroke="#f97316" stroke-width="1" opacity="0.5"/>
+  <line x1="240" y1="170" x2="240" y2="196" stroke="#10b981" stroke-width="1" opacity="0.5"/>
+
+  <!-- Drop lines right -->
+  <line x1="960"  y1="170" x2="960"  y2="204" stroke="#10b981" stroke-width="1" opacity="0.5"/>
+  <line x1="1020" y1="170" x2="1020" y2="196" stroke="#f97316" stroke-width="1" opacity="0.5"/>
+  <line x1="1080" y1="170" x2="1080" y2="204" stroke="#818cf8" stroke-width="1" opacity="0.5"/>
+  <line x1="1140" y1="170" x2="1140" y2="196" stroke="#22d3ee" stroke-width="1" opacity="0.6"/>
+
+  <!-- Labels left -->
+  <text x="60"  y="218" text-anchor="middle" font-family="monospace" font-size="8" fill="#22d3ee" opacity="0.85">agenthooks</text>
+  <text x="120" y="214" text-anchor="middle" font-family="monospace" font-size="8" fill="#818cf8" opacity="0.8">agentplane</text>
+  <text x="180" y="222" text-anchor="middle" font-family="monospace" font-size="8" fill="#f97316" opacity="0.8">agentguard</text>
+  <text x="240" y="214" text-anchor="middle" font-family="monospace" font-size="8" fill="#10b981" opacity="0.8">agenteval</text>
+
+  <!-- Labels right -->
+  <text x="960"  y="222" text-anchor="middle" font-family="monospace" font-size="8" fill="#10b981" opacity="0.8">agentregistry</text>
+  <text x="1020" y="214" text-anchor="middle" font-family="monospace" font-size="8" fill="#f97316" opacity="0.8">agentobserve</text>
+  <text x="1080" y="222" text-anchor="middle" font-family="monospace" font-size="8" fill="#818cf8" opacity="0.8">agent-gateway</text>
+  <text x="1140" y="214" text-anchor="middle" font-family="monospace" font-size="8" fill="#22d3ee" opacity="0.85">wire-ai</text>
+
+  <!-- Central box -->
+  <rect x="355" y="112" width="490" height="116" rx="14" fill="#050d2a" stroke="url(#line)" stroke-width="1.5" opacity="0.95"/>
+
+  <!-- Title -->
+  <text x="600" y="154" text-anchor="middle" font-family="'SF Mono','Fira Code',monospace" font-size="38" font-weight="700" fill="url(#title)" filter="url(#tglow)">agent-examples</text>
+
+  <!-- Subtitle -->
+  <text x="600" y="181" text-anchor="middle" font-family="'SF Mono','Fira Code',monospace" font-size="12" fill="#94a3b8" opacity="0.9" letter-spacing="1.5">35 real working projects · full agent infrastructure stack</text>
+
+  <!-- Tagline -->
+  <text x="600" y="272" text-anchor="middle" font-family="'SF Mono','Fira Code',monospace" font-size="10" fill="#64748b" opacity="0.8" letter-spacing="1">
+    hooks · policy · safety · registry · eval · observability · no API keys required
+  </text>
+
+  <!-- Corner brackets -->
+  <rect x="18" y="18" width="28" height="2" fill="#22d3ee" opacity="0.4"/>
+  <rect x="18" y="18" width="2" height="28" fill="#22d3ee" opacity="0.4"/>
+  <rect x="1154" y="18" width="28" height="2" fill="#f97316" opacity="0.4"/>
+  <rect x="1180" y="18" width="2" height="28" fill="#f97316" opacity="0.4"/>
+  <rect x="18" y="320" width="28" height="2" fill="#818cf8" opacity="0.4"/>
+  <rect x="18" y="294" width="2" height="28" fill="#818cf8" opacity="0.4"/>
+  <rect x="1154" y="320" width="28" height="2" fill="#10b981" opacity="0.4"/>
+  <rect x="1180" y="294" width="2" height="28" fill="#10b981" opacity="0.4"/>
+</svg>
